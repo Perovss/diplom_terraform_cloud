@@ -31,7 +31,7 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
 
   tags = {
-  Name =local.web_instance_type_map[terraform.workspace]
+  Name ="t2.micro"
   }
 }
 
