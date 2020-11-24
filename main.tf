@@ -27,6 +27,7 @@ resource "aws_instance" "web" {
   Name =aws_instance.web.instance_type
   }
 }
+#
 data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
