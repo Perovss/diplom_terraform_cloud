@@ -1,0 +1,34 @@
+version: 3
+automerge: true
+projects:
+- name: my-project-name1
+  dir: .
+  workspace: stage
+  terraform_version: v0.13.5
+  autoplan:
+    when_modified: ["*.tf", "../modules/**.tf"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
+  workflow: myworkflow
+- name: my-project-name2
+  dir: .
+  workspace: prod
+  terraform_version: v0.13.5
+  autoplan:
+    when_modified: ["*.tf", "../modules/**.tf"]
+    enabled: true
+  apply_requirements: [mergeable, approved]
+  workflow: myworkflow
+workflows:
+  myworkflow:
+    plan:
+      steps:
+      - run: my-custom-command arg1 arg2
+      - init
+      - plan:
+          extra_args: ["-lock", "false"]
+      - run: my-custom-command arg1 arg2
+    apply:
+      steps:
+      - run: echo hello
+      - apply
