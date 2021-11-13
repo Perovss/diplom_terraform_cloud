@@ -1,5 +1,7 @@
 provider "aws" {
   region = "us-east-2"
+  # shared_credentials_file = "~/.aws/credentials"
+  # profile = "default"
 }
 
 data "aws_ami" "ubuntu" {
@@ -86,7 +88,7 @@ resource "aws_security_group" "diplom_sec_group"{
 }
 
 resource "aws_instance" "diplom_instance" {
-  count = 3
+  # count = 3
   tags = {
     Name = "Diplom Netology"
   }

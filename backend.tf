@@ -4,7 +4,7 @@ terraform {
     organization = "perovss"
 
     workspaces {
-      prefix = "stage-"
+      name = "stage"
   }
 }
 }
