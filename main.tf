@@ -86,7 +86,10 @@ resource "aws_security_group" "diplom_sec_group"{
 }
 
 resource "aws_instance" "diplom_instance" {
-  # count = 3
+  count = 3
+  tags = {
+    Name = "Diplom Netology"
+  }
   subnet_id     = module.vpc.public_subnets[0]
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
