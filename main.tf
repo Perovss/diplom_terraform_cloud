@@ -1,6 +1,9 @@
+# variable "access_key" {"AKIAZVZYY2MISH6MBUSG"}
+# variable "secret_key" {"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"}
+
 provider "aws" {
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
+  access_key = "AKIAZVZYY2MISH6MBUSG"
+  secret_key = "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"
   region = "us-east-2"
 }
 
