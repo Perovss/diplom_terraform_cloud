@@ -3,6 +3,8 @@ terraform {
     hostname = "app.terraform.io"
     organization = "perovss"
 
-    workspaces {name = "stage"}
+    workspaces {
+      prefix = "stage-"
   }
+}
 }
