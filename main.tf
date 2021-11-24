@@ -80,9 +80,9 @@ resource "aws_security_group" "diplom_sec_group"{
   }
 
   ingress {
-    from_port = 20000
+    from_port = 30001
     protocol = "tcp"
-    to_port = 20000
+    to_port = 30001
     cidr_blocks = ["0.0.0.0/0"]
   }  
 }
